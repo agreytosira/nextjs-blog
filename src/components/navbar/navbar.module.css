@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 100px;
 }
 
 .social {
@@ -15,6 +16,10 @@
     text-align: center;
     font-size: 36px;
     font-weight: bold;
+}
+
+.link {
+    color: var(--textColor) !important;
 }
 
 .links {
@@ -45,5 +50,14 @@
 @media screen and (max-width: 768px) {
     .logo {
         font-size: 24px;
+    }
+}
+@media screen and (max-width: 640px) {
+    .links {
+        justify-content: flex-end;
+    }
+
+    .link {
+        display: none;
     }
 }
