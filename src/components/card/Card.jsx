@@ -14,7 +14,7 @@ export const Card = () => {
                     <span className={styles.category}>CULTURE</span>
                 </div>
                 <Link href='/'>
-                    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, mollitia.</h1>
+                    <h1>Lorem ipsum dolor sit amet.</h1>
                 </Link>
                 <p className={styles.desc}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi vitae placeat error hic esse illum, tenetur quae est magnam ex distinctio quos suscipit officia! Porro et dolore assumenda doloremque totam?</p>
                 <Link className={styles.link} href='/'>
