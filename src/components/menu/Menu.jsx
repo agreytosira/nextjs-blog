@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { MenuPosts } from '../menuPosts/menuPosts';
 import styles from './menu.module.css';
 
 export const Menu = () => {
@@ -8,152 +9,36 @@ export const Menu = () => {
         <div className={styles.container}>
             <h2 className={styles.subtitle}>{"What's hot"}</h2>
             <h1 className={styles.title}>Most Popular</h1>
-            <div className={styles.items}>
-                <Link href='/' className={styles.item}>
-                    <div className={styles.textContainer}>
-                        <span className={`${styles.category} ${styles.style}`}>style</span>
-                        <h3 className={styles.postTitle}>Lorem, ipsum dolor sit amet </h3>
-                        <div className={styles.detail}>
-                            <span className={styles.username}>John Doe</span>
-                            <span className={styles.date}> - 10.03.2023</span>
-                        </div>
-                    </div>
+            <MenuPosts withImage={false} />
+
+            {/* Categories Section */}
+            <h2 className={styles.subtitle}>Discover by topic</h2>
+            <h1 className={styles.title}>Categories</h1>
+            <div className={styles.categoryList}>
+                <Link href='/blog?cat=style' className={`${styles.categoryItem} ${styles.style}`}>
+                    style
                 </Link>
-                <Link href='/' className={styles.item}>
-                    <div className={styles.textContainer}>
-                        <span className={`${styles.category} ${styles.fashion}`}>fashion</span>
-                        <h3 className={styles.postTitle}>Lorem, ipsum dolor sit amet </h3>
-                        <div className={styles.detail}>
-                            <span className={styles.username}>John Doe</span>
-                            <span className={styles.date}> - 10.03.2023</span>
-                        </div>
-                    </div>
+                <Link href='/blog?cat=fashion' className={`${styles.categoryItem} ${styles.fashion}`}>
+                    fashion
                 </Link>
-                <Link href='/' className={styles.item}>
-                    <div className={styles.textContainer}>
-                        <span className={`${styles.category} ${styles.food}`}>food</span>
-                        <h3 className={styles.postTitle}>Lorem, ipsum dolor sit amet </h3>
-                        <div className={styles.detail}>
-                            <span className={styles.username}>John Doe</span>
-                            <span className={styles.date}> - 10.03.2023</span>
-                        </div>
-                    </div>
+                <Link href='/blog?cat=food' className={`${styles.categoryItem} ${styles.food}`}>
+                    food
                 </Link>
-                <Link href='/' className={styles.item}>
-                    <div className={styles.textContainer}>
-                        <span className={`${styles.category} ${styles.travel}`}>Travel</span>
-                        <h3 className={styles.postTitle}>Lorem, ipsum dolor sit amet </h3>
-                        <div className={styles.detail}>
-                            <span className={styles.username}>John Doe</span>
-                            <span className={styles.date}> - 10.03.2023</span>
-                        </div>
-                    </div>
+                <Link href='/blog?cat=travel' className={`${styles.categoryItem} ${styles.travel}`}>
+                    travel
                 </Link>
-                <Link href='/' className={styles.item}>
-                    <div className={styles.textContainer}>
-                        <span className={`${styles.category} ${styles.culture}`}>culture</span>
-                        <h3 className={styles.postTitle}>Lorem, ipsum dolor sit amet </h3>
-                        <div className={styles.detail}>
-                            <span className={styles.username}>John Doe</span>
-                            <span className={styles.date}> - 10.03.2023</span>
-                        </div>
-                    </div>
+                <Link href='/blog?cat=culture' className={`${styles.categoryItem} ${styles.culture}`}>
+                    culture
                 </Link>
-                <Link href='/' className={styles.item}>
-                    <div className={styles.textContainer}>
-                        <span className={`${styles.category} ${styles.coding}`}>coding</span>
-                        <h3 className={styles.postTitle}>Lorem, ipsum dolor sit amet </h3>
-                        <div className={styles.detail}>
-                            <span className={styles.username}>John Doe</span>
-                            <span className={styles.date}> - 10.03.2023</span>
-                        </div>
-                    </div>
+                <Link href='/blog?cat=coding' className={`${styles.categoryItem} ${styles.coding}`}>
+                    coding
                 </Link>
             </div>
 
             {/* Editor Pick Section */}
             <h2 className={styles.subtitle}>Chosen by the editor</h2>
             <h1 className={styles.title}>Editors Pick</h1>
-            <div className={styles.items}>
-                <Link href='/' className={styles.item}>
-                    <div className={styles.imageContainer}>
-                        <Image src='/p1.jpeg' alt='' fill className={styles.image} />
-                    </div>
-                    <div className={styles.textContainer}>
-                        <span className={`${styles.category} ${styles.style}`}>style</span>
-                        <h3 className={styles.postTitle}>Lorem, ipsum dolor sit amet </h3>
-                        <div className={styles.detail}>
-                            <span className={styles.username}>John Doe</span>
-                            <span className={styles.date}> - 10.03.2023</span>
-                        </div>
-                    </div>
-                </Link>
-                <Link href='/' className={styles.item}>
-                    <div className={styles.imageContainer}>
-                        <Image src='/p1.jpeg' alt='' fill className={styles.image} />
-                    </div>
-                    <div className={styles.textContainer}>
-                        <span className={`${styles.category} ${styles.fashion}`}>fashion</span>
-                        <h3 className={styles.postTitle}>Lorem, ipsum dolor sit amet </h3>
-                        <div className={styles.detail}>
-                            <span className={styles.username}>John Doe</span>
-                            <span className={styles.date}> - 10.03.2023</span>
-                        </div>
-                    </div>
-                </Link>
-                <Link href='/' className={styles.item}>
-                    <div className={styles.imageContainer}>
-                        <Image src='/p1.jpeg' alt='' fill className={styles.image} />
-                    </div>
-                    <div className={styles.textContainer}>
-                        <span className={`${styles.category} ${styles.food}`}>food</span>
-                        <h3 className={styles.postTitle}>Lorem, ipsum dolor sit amet </h3>
-                        <div className={styles.detail}>
-                            <span className={styles.username}>John Doe</span>
-                            <span className={styles.date}> - 10.03.2023</span>
-                        </div>
-                    </div>
-                </Link>
-                <Link href='/' className={styles.item}>
-                    <div className={styles.imageContainer}>
-                        <Image src='/p1.jpeg' alt='' fill className={styles.image} />
-                    </div>
-                    <div className={styles.textContainer}>
-                        <span className={`${styles.category} ${styles.travel}`}>Travel</span>
-                        <h3 className={styles.postTitle}>Lorem, ipsum dolor sit amet </h3>
-                        <div className={styles.detail}>
-                            <span className={styles.username}>John Doe</span>
-                            <span className={styles.date}> - 10.03.2023</span>
-                        </div>
-                    </div>
-                </Link>
-                <Link href='/' className={styles.item}>
-                    <div className={styles.imageContainer}>
-                        <Image src='/p1.jpeg' alt='' fill className={styles.image} />
-                    </div>
-                    <div className={styles.textContainer}>
-                        <span className={`${styles.category} ${styles.culture}`}>culture</span>
-                        <h3 className={styles.postTitle}>Lorem, ipsum dolor sit amet </h3>
-                        <div className={styles.detail}>
-                            <span className={styles.username}>John Doe</span>
-                            <span className={styles.date}> - 10.03.2023</span>
-                        </div>
-                    </div>
-                </Link>
-                <Link href='/' className={styles.item}>
-                    <div className={styles.imageContainer}>
-                        <Image src='/p1.jpeg' alt='' fill className={styles.image} />
-                    </div>
-                    <div className={styles.textContainer}>
-                        <span className={`${styles.category} ${styles.coding}`}>coding</span>
-                        <h3 className={styles.postTitle}>Lorem, ipsum dolor sit amet </h3>
-                        <div className={styles.detail}>
-                            <span className={styles.username}>John Doe</span>
-                            <span className={styles.date}> - 10.03.2023</span>
-                        </div>
-                    </div>
-                </Link>
-            </div>
+            <MenuPosts withImage={true} />
         </div>
     );
 };
