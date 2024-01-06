@@ -1,10 +1,11 @@
-import React from 'react';
 import { Card } from '../card/Card';
 import { Pagination } from '../pagination/Pagination';
 import styles from './cardList.module.css';
 
-const getData = async (page) => {
-    const res = await fetch(`http://localhost:3000/api/posts?page=${page}`, { cache: 'no-store' });
+const getData = async (page, cat) => {
+    const res = await fetch(`http://localhost:3000/api/posts?page=${page}&cat=${cat || ''}`, {
+        cache: 'no-store'
+    });
 
     if (!res.ok) {
         throw new Error('Failed');
@@ -13,8 +14,8 @@ const getData = async (page) => {
     return res.json();
 };
 
-export const CardList = async ({ page }) => {
-    const { posts, count } = await getData(page);
+export const CardList = async ({ page, cat }) => {
+    const { posts, count } = await getData(page, cat);
 
     const POST_PER_PAGE = 2;
 
